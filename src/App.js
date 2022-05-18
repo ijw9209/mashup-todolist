@@ -46,34 +46,56 @@
 
 // #3
 
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import Button from './components/Button';
+// import React from 'react';
+// import styled, { ThemeProvider } from 'styled-components';
+// import Button from './components/Button';
 
-const AppBlock = styled.div`
-  width : 512px;
-  margin: 0 auto;
-  margin-top : 4rem;
-  border : 1px solid black;
-  padding : 1rem;
+// const AppBlock = styled.div`
+//   width : 512px;
+//   margin: 0 auto;
+//   margin-top : 4rem;
+//   border : 1px solid black;
+//   padding : 1rem;
+
+// `
+
+// const App = () => {
+//   return (
+//     <ThemeProvider
+//       theme={{
+//         palette: {
+//           blue: '#228be6',
+//           gray: '#495057',
+//           pink: '#f06595'
+//         }
+//       }}
+//     >
+//       <AppBlock>
+//         <Button>BUTTON</Button>
+//       </AppBlock>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default App;
+
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import TodoTemplate from './components/TodoTemplate';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background : #e9ecef;
+  }
 
 `
 
 const App = () => {
   return (
-    <ThemeProvider
-      theme={{
-        palette: {
-          blue: '#228be6',
-          gray: '#495057',
-          pink: '#f06595'
-        }
-      }}
-    >
-      <AppBlock>
-        <Button>BUTTON</Button>
-      </AppBlock>
-    </ThemeProvider>
+    <>
+      <GlobalStyle />
+      <TodoTemplate>안녕하세요</TodoTemplate>
+    </>
   );
 };
 
